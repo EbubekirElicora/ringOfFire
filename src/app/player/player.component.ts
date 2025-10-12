@@ -12,9 +12,9 @@ import { Player } from '../../models/player';
 export class PlayerComponent {
   @Input() player?: Player;
   @Input() playerActive: boolean = false;
+  @Input() imageSrc?: string;
 
   get avatarSrc(): string {
-    const file = this.player?.image ?? 'default.png';
-    return `assets/img/profile/${file}`;
+    return this.imageSrc ?? 'assets/img/profile/default.png';
   }
 }

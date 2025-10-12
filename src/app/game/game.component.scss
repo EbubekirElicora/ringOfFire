@@ -62,6 +62,16 @@
     z-index: 1;
 }
 
+.player-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px; /* verschiebe das Bild an die richtige Position im Spieler-Container */
+  top: 0;
+}
+
+
 .btn-add {
     position: absolute;
     right: 32px;
