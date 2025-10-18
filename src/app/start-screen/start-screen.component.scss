@@ -37,5 +37,9 @@
             filter: brightness(1.25);
             cursor: pointer;
         }
+
+          @media (max-width: 420px) {
+            width: 300px;
+        }
     }
 }

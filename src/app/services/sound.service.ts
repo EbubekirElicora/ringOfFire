@@ -42,7 +42,6 @@ export class SoundService {
     const baseAudio = this.sounds.get(key) ?? new Audio(this.soundFiles[key]);
     this.sounds.set(key, baseAudio);
     const effectiveVolume = typeof opts?.volume === 'number' ? opts.volume : this.volume;
-
     if (opts?.loop) {
       baseAudio.loop = true;
       baseAudio.volume = effectiveVolume;
@@ -50,18 +49,16 @@ export class SoundService {
       baseAudio.play().catch(() => {});
       return;
     }
-
     if (opts?.restart) {
       baseAudio.volume = effectiveVolume;
       baseAudio.currentTime = 0;
       baseAudio.play().catch(() => {});
       return;
     }
-
     const clone = baseAudio.cloneNode(true) as HTMLAudioElement;
     clone.volume = effectiveVolume;
     clone.play().catch(() => {});
-    clone.onended = () => { /* cleanup not required */ };
+    clone.onended = () => {};
   }
 
   stop(key: SoundKey): void {
@@ -97,10 +94,10 @@ export class SoundService {
   async tryUnlock(): Promise<void> {
     try {
       const audio = new Audio();
-      audio.src = 'data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAAAA...'; // tiny silent? optional
+      audio.src = 'data:audio/mp3;base64,//uQZAAAAAAAAAAAAAAAAAAAAAA...';
       audio.volume = 0;
       await audio.play().catch(() => { });
       audio.pause();
-    } catch { /* ignore */ }
+    } catch {}
   }
 }

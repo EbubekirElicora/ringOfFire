@@ -1,10 +1,10 @@
 <div class="right-controls" *ngIf="showRightControls" aria-hidden="false">
-  <app-reload-game [gameId]="currentGameId"></app-reload-game>
-  <app-back-to-menu [gameId]="currentGameId"></app-back-to-menu>
+    <app-reload-game [gameId]="currentGameId"></app-reload-game>
+    <app-back-to-menu [gameId]="currentGameId"></app-back-to-menu>
 
-  <button class="effecte-btn effecte-purple effecte-lg" aria-label="Add player" (click)="openDialog()">
-      <span class="icon">+</span>
-  </button>
+    <button class="effecte-btn effecte-purple effecte-lg" aria-label="Add player" (click)="openDialog()">
+        <span class="icon">+</span>
+    </button>
 </div>
 
 <div class="player-stack">

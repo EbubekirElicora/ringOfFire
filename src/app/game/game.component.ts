@@ -117,18 +117,18 @@ export class GameComponent implements OnInit, OnDestroy {
     this.game.player_images.push(`assets/img/profile/${image}`);
   }
 
-async openDialog(): Promise<void> {
-  this.showRightControls = false;
-  this.soundService.play('create_btn', { restart: true });
-  const dialogRef = this.dialog.open(DialogAddPlayerComponent);
-  dialogRef.afterClosed().subscribe(async (result: { name: string; image: string } | undefined) => {
-    this.showRightControls = true;
-    if (result && result.name && result.image) {
-      this.addPlayer(result.name, result.image);
-      await this.updateFirestore();
-    }
-  });
-}
+  async openDialog(): Promise<void> {
+    this.showRightControls = false;
+    this.soundService.play('create_btn', { restart: true });
+    const dialogRef = this.dialog.open(DialogAddPlayerComponent);
+    dialogRef.afterClosed().subscribe(async (result: { name: string; image: string } | undefined) => {
+      this.showRightControls = true;
+      if (result && result.name && result.image) {
+        this.addPlayer(result.name, result.image);
+        await this.updateFirestore();
+      }
+    });
+  }
 
   /** -------------------- KARTE ZIEHEN -------------------- **/
 
