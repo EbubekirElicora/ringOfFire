@@ -1,6 +1,9 @@
 <mat-card>
-    <mat-card-title style="padding-left: 16px;">{{ card ? title : 'Please pick a card' }}</mat-card-title>
+    <mat-card-title>
+        <span>{{ card ? title : 'Please pick a card' }}</span>
+        <span *ngIf="card" class="card-icon">!</span>
+    </mat-card-title>
     <mat-card-content>
-        {{ card ? description : 'Plese click on the card stack to select the next card.' }}
+        {{ card ? description : 'Please click on the card stack to select the next card.' }}
     </mat-card-content>
 </mat-card>

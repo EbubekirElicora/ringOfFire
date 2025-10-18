@@ -5,7 +5,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../assets/img/board.jpg");
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../../assets/img/board.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -58,19 +60,17 @@
 
 .player-position {
     position: absolute;
-    right: 0;
     z-index: 1;
 }
 
 .player-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  position: absolute;
-  left: -30px; /* verschiebe das Bild an die richtige Position im Spieler-Container */
-  top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+    top: 0;
 }
-
 
 .btn-add {
     position: absolute;
@@ -161,4 +161,62 @@ app-player-mobile {
     font-size: 18px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     z-index: 10001;
+}
+
+.right-controls {
+    position: absolute;
+    right: 24px;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    z-index: 3000;
+}
+
+@media (max-width: 720px) {
+    .right-controls {
+        top: 460px;
+        gap: 16px;
+    }
+
+    .player-position {
+        position: unset;
+    }
+
+    .player-stack {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        gap: 16px;
+        padding-left: 16px;
+        margin-top: 16px;
+    }
+
+    .effecte-lg {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+    }
+
+    .card-stack {
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 100px;
+        }
+    }
+}
+
+
+@media (max-width: 420px) {
+    .card-stack {
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 80px;
+        }
+    }
 }

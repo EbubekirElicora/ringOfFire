@@ -1,4 +1,6 @@
-<div class="player" [class.player-active]="playerActive">
-  <img [src]="avatarSrc" [class.active]="playerActive" alt="{{player?.name}}">
+<div class="player" 
+[class.player-active]="playerActive">
   <span>{{ player?.name }}</span>
+  <img [src]="avatarSrc" 
+  [class.active]="playerActive" alt="{{player?.name}}">
 </div>

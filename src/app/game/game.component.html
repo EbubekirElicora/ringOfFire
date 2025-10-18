@@ -1,13 +1,25 @@
-<app-player *ngFor="let player of game.players; 
+<div class="right-controls" *ngIf="showRightControls" aria-hidden="false">
+  <app-reload-game [gameId]="currentGameId"></app-reload-game>
+  <app-back-to-menu [gameId]="currentGameId"></app-back-to-menu>
+
+  <button class="effecte-btn effecte-purple effecte-lg" aria-label="Add player" (click)="openDialog()">
+      <span class="icon">+</span>
+  </button>
+</div>
+
+<div class="player-stack">
+    <app-player *ngFor="let player of game.players; 
 let i = index" [player]="player" [playerActive]="i == game.currentPlayer" [imageSrc]="game.player_images[i]"
-    [ngStyle]="{'top.px': 100 + (i*90) }" class="player-position">
-</app-player>
+        [ngStyle]="{'top.px': 32 + (i*90) }" class="player-position">
+    </app-player>
+</div>
 
 <div class="field">
     <div class="card-stack">
         <img *ngFor="let c of [0,1,2,3]; let i = index;" [ngStyle]="{'right.px': i*5}"
-            src="../../assets/img/cards/card_cover.png">
-        <img (click)="takeCard()" class="top-card" style="right: 25px;" src="../../assets/img/cards/card_cover.png">
+            [src]="'../../assets/img/cards/' + cardBacks[i % cardBacks.length]">
+        <img (click)="takeCard()" class="top-card" style="right: 25px;"
+            [src]="'../../assets/img/cards/' + cardBacks[topCardBackIndex]">
         <img *ngFor="let card of game.playedCards" class="played-card" src="../../assets/img/cards/{{ card }}.png">
         <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 25px;"
             src="../../assets/img/cards/{{game.currentCard}}.png">
@@ -15,10 +27,6 @@ let i = index" [player]="player" [playerActive]="i == game.currentPlayer" [image
 </div>
 
 <app-game-info [card]="game.currentCard" class="pin-bottom"></app-game-info>
-
-<button mat-fab color="primary" (click)="openDialog()" class="btn-add">
-    <mat-icon>add</mat-icon>
-</button>
 
 <div class="gameOver" *ngIf="gameOverShown">
     <div class="game-over-backdrop"></div>

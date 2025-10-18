@@ -1,22 +1,20 @@
-<h2 mat-dialog-title>Add new Player</h2>
+<div class="dialog-container">
+  <h2 class="dialog-title">🎴 Add a New Player 🎴</h2>
 
-<mat-dialog-content>
-  <p>Please enter the Name of a player and select an avatar</p>
+  <p class="dialog-subtitle">Enter your name and pick your avatar</p>
 
-  <mat-form-field appearance="fill" style="width:100%">
-    <mat-label>Name</mat-label>
-    <input matInput [(ngModel)]="name" />
-  </mat-form-field>
+  <input type="text" [(ngModel)]="name" placeholder="Player Name" class="name-input" />
 
   <div class="avatar-grid">
     <div class="avatar-item" *ngFor="let a of avatars" [class.selected]="selectedAvatar === a"
       (click)="selectAvatar(a)">
       <img [src]="avatarPath(a)" [alt]="a" />
+      <div class="avatar-glow" *ngIf="selectedAvatar === a"></div>
     </div>
   </div>
-</mat-dialog-content>
 
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [disabled]="!canConfirm()" [mat-dialog-close]="{ name: name, image: selectedAvatar }">Ok</button>
-</mat-dialog-actions>
+  <div class="dialog-actions">
+    <button mat-button (click)="onNoClick()" class="btn-cancel">Cancel</button>
+    <button mat-button [disabled]="!canConfirm()" (click)="confirm()" class="btn-ok">Add Player</button>
+  </div>
+</div>

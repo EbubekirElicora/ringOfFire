@@ -1,5 +1,48 @@
 mat-card {
-    @media (max-width: 720px) {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+    padding: 16px;
+    color: #fff;
+    min-height: 120px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+    mat-card-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 14px;
+        color: #00e5ff;
+        text-shadow: 0 0 3px #00e5ff, 0 0 3px #00b8d4;
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+
+    mat-card-content {
+        font-size: 24px;
+        line-height: 1.4;
+        color: #fff;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 720px) {
+    mat-card {
         min-height: 120px;
+        padding: 12px;
+        margin-inline: 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    mat-card-content {
+        font-size: 16px !important;
+    }
+
+    mat-card-title {
+        font-size: 24px !important;
     }
 }

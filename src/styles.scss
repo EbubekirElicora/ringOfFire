@@ -1,30 +1,89 @@
 body {
-    margin: 0;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 html,
 body {
-    height: 100%;
-}
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+  overflow: hidden;
 }
 
-html, body {
-    overflow: hidden;
+.effecte-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  outline: none;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .16s cubic-bezier(.2, .9, .2, 1), box-shadow .16s ease, filter .12s ease;
+  border-radius: 50%;
+  user-select: none;
+  width: 56px;
+  height: 56px;
+  font-size: 18px;
 }
 
-@media (max-width: 720px) {
-    .hide-mobile {
-        display: none !important;
-    }
+.effecte-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  width: 62%;
+  height: 28%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.02));
+  pointer-events: none;
+  mix-blend-mode: overlay;
 }
 
-@media (min-width: 720px) {
-    .hide-desktop {
-        display: none !important;
-    }
+.effecte-btn:focus-visible {
+  box-shadow: 0 22px 56px rgba(71, 27, 121, 0.45), 0 0 0 6px rgba(14, 193, 219, 0.06);
+  outline: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.effecte-purple {
+  background: linear-gradient(135deg, #7b4dd6 0%, #9a6bf2 60%, #5ef0ff 100%);
+  color: #06020a;
+  box-shadow:
+    0 14px 36px rgba(71, 27, 121, 0.50),
+    0 0 22px rgba(154, 107, 242, 0.20) inset,
+    0 0 12px rgba(94, 240, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.effecte-purple:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow:
+    0 30px 72px rgba(71, 27, 121, 0.55),
+    0 0 36px rgba(94, 240, 255, 0.22) inset,
+    0 0 28px rgba(154, 107, 242, 0.28);
+  filter: saturate(1.05);
+}
+
+.effecte-purple:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.effecte-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 28px;
+}
+
+.effecte-md,
+.effecte-sm {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+}
+
+.effecte-btn .icon {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+}
