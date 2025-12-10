@@ -1,27 +1,74 @@
-# RingOfFire
+# Ring of Fire
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+Interactive web-based card game inspired by the classic “Ring of Fire”.
+The project focuses on clean game logic, structured state management and real-time interaction using modern web technologies.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+Ring of Fire is a browser-based card game where players draw cards and trigger predefined game rules.
+The application was developed as a Single Page Application with a clear separation between UI, game logic and data handling.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project demonstrates how interactive game mechanics can be implemented with maintainable, scalable code instead of ad-hoc scripting.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Purpose
 
-## Running unit tests
+This project was built to:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- deepen my understanding of event-driven game logic
+- practice structured state management
+- work with real-time data using Firebase
+- build a complete application from concept to finished product
 
-## Running end-to-end tests
+It represents a practical, non-trivial JavaScript / TypeScript project rather than a simple demo.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Tech Stack
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Frontend
+- Angular
+- TypeScript
+- HTML5
+- SCSS
+- Component-based architecture
+- Responsive layout for different screen sizes
+
+### Backend / Services
+- Firebase Firestore
+- Real-time data synchronization
+- Basic access control via Firestore rules
+
+### Tooling
+- Git & GitHub
+- npm
+- Angular CLI
+
+## Architecture
+
+- Clear separation of UI, game rules and data handling
+- Centralized game state management
+- Reusable components for cards and player interactions
+- Predictable update cycle for game flow and UI updates
+- Focus on readability and long-term maintainability
+
+## Features
+
+- Interactive card drawing
+- Rule-based game logic
+- Real-time game state updates
+- Responsive UI for desktop and mobile
+- Clean and minimalistic user interface
+
+
+## What I Learned
+
+Developing Ring of Fire strengthened my ability to build interactive applications with clean, event-driven logic.
+I designed the entire game architecture independently, separating UI, gameplay rules and data flow into maintainable modules.
+Working with Firebase improved my understanding of real-time updates and asynchronous state handling.
+The project helped me write clearer TypeScript, structure features more predictably and translate complex behavior into stable, scalable code.
+
+
+## Live Demo
+
+[Live Test](<LIVE_URL>)
