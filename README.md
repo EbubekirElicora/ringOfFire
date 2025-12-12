@@ -72,3 +72,12 @@ The project helped me write clearer TypeScript, structure features more predicta
 ## Live Demo
 
 [Live Test](https://ebubekir-elicora.de/ring-of-fire/)
+
+#  Running the Project Locally
+
+No build tools required.
+
+```bash
+git clone https://github.com/EbubekirElicora/ringOfFire.git
+cd ringofFire
+
