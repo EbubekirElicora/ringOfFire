@@ -71,4 +71,4 @@ The project helped me write clearer TypeScript, structure features more predicta
 
 ## Live Demo
 
-[Live Test](<LIVE_URL>)
+[Live Test](https://ebubekir-elicora.de/ring-of-fire/)
